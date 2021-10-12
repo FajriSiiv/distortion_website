@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>League Of Legend</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Overlay -->
+      <!-- ---------- -->
+      <div class="overlay first"></div>
+      <div class="overlay second"></div>
+      <div class="overlay third"></div>
+
+      <!-- Navbar -->
+      <!-- ===================== -->
+      <nav class="navbar">
+        <div class="menu">
+          <ion-icon name="grid-outline"></ion-icon>
+        </div>
+        <div class="lang">eng</div>
+        <div class="search">
+          <ion-icon name="search-outline"></ion-icon>
+        </div>
+      </nav>
+      <!-- Sosmedia -->
+      <!-- ========= -->
+      <div class="media">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+
+      <!-- Text -->
+      <!-- ==================== -->
+      <div class="text">
+        <h1>
+          <span class="hidetext">
+            league of
+          </span>
+        </h1>
+        <h2>legends</h2>
+        <h3>
+          <span class="hidetext">
+            world tournament <br />
+            berlin
+          </span>
+        </h3>
+        <p>
+          <span class="hidetext">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam ex reiciendis
+            architecto deserunt molestias tempore odit distinctio, tenetur quam est!
+          </span>
+        </p>
+      </div>
+
+      <!-- Sponsor -->
+      <!-- ================= -->
+      <div class="sponsor">
+        <h1>
+          RIOT <br />
+          GAMES
+        </h1>
+      </div>
+
+      <!-- Distortion -->
+      <div class="distortion"></div>
+      <!-- END -->
+    </div>
+
+    <!-- Three js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <!-- Ion Icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Hover-Effect js -->
+    <script src="./hover-effect.umd.js"></script>
+
+    <!-- Script -->
+    <script>
+      new hoverEffect({
+        parent: document.querySelector(".distortion"),
+        intensity: 0.2,
+        image1: "./images/2.png",
+        image2: "./images/1.png",
+        displacementImage: "./images/2.png",
+        imagesRatio: 300 / 300
+      });
+
+      //navbar
+
+      //media
+
+      //text
+      TweenMax.from(".text h1 .hidetext", 1.5, {
+        delay: 1,
+        y: "100%",
+        ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".text h3 .hidetext", 1.5, {
+        delay: 1.2,
+        y: "100%",
+        ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".text p .hidetext", 1.5, {
+        delay: 1.3,
+        y: "150%",
+        ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".text h2", 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        x: "-10000",
+        ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".sponsor h1", 1.5, {
+        delay: 1.3,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".sponsor p", 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        y: "20",
+        ease: Expo.easeInOut
+      });
+
+      // Distortion
+      TweenMax.from(".distortion", 1.5, {
+        delay: 2,
+        y: "20",
+        opacity: 0,
+        ease: Expo.easeInOut
+      });
+      //sosmed
+      TweenMax.from(".media ul li", 1.5, {
+        delay: 2,
+        y: "-20",
+        opacity: 0,
+        ease: Expo.easeInOut
+      });
+      //navbar
+      TweenMax.staggerFrom(
+        ".navbar div ",
+        1.5,
+        {
+          delay: 2,
+          y: "100%",
+          opacity: 0,
+          ease: Expo.easeInOut
+        },
+        0.08
+      );
+      // overlay
+
+      TweenMax.to(".first", 1.5, {
+        delay: 0.5,
+        top: "-100%",
+        ease: Expo.easeInOut
+      });
+      TweenMax.to(".second", 1.5, {
+        delay: 0.7,
+        top: "-100%",
+        ease: Expo.easeInOut
+      });
+      TweenMax.to(".third", 1.5, {
+        delay: 0.9,
+        top: "-100%",
+        ease: Expo.easeInOut
+      });
+    </script>
+  </body>
+</html>
